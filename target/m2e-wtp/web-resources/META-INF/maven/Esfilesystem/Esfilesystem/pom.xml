@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>Esfilesystem</groupId>
   <artifactId>Esfilesystem</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <packaging>war</packaging>
   <name>esfilesystem</name>
   <properties>
@@ -17,6 +17,7 @@
 			<artifactId>elasticsearch-rest-high-level-client</artifactId>
 			<version>7.17.6</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.elasticsearch.client</groupId>
 			<artifactId>elasticsearch-rest-client</artifactId>
@@ -42,10 +43,7 @@
     <artifactId>log4j-to-slf4j</artifactId>
     <version>2.17.1</version>
 </dependency>
-    <dependency> 
-    <groupId>org.elasticsearch.client</groupId> 
-    <artifactId>elasticsearch-rest-high-level-client</artifactId> <version>7.17.6</version> 
-    </dependency>
+   
 	</dependencies>
   <build>
     <plugins>
