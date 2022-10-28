@@ -12,11 +12,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.ElasticsearchException;
@@ -199,12 +199,12 @@ public class SyncServlet extends HttpServlet {
 			Map<String, Object> dataMap = new HashMap<String, Object>();
 			dataMap.put("parent_path", path);
 			dataMap.put("directory_name", name);
-			dataMap.put("subdirectories", subdirectories);
-			dataMap.put("files", files);
+			dataMap.put("subdirectories", Integer.toString(subdirectories));
+			dataMap.put("files", Integer.toString(files));
 			dataMap.put("size_bytes", size);
-			dataMap.put("size", sizeInBytes);
+			dataMap.put("size", Integer.toString(sizeInBytes));
 			dataMap.put("sync_time", new java.util.Date().getTime());
-			dataMap.put("version", version);
+			dataMap.put("version", Integer.toString(version));
 			IndexRequest indexRequest = new IndexRequest(INDEX).source(dataMap);
 
 			IndexResponse res = restHighLevelClient.index(indexRequest, RequestOptions.DEFAULT);
